@@ -8,6 +8,8 @@
   <li>Resources: Leads and Leads List.</li>
 </ul>
 
+<p>API Documentation: https://documenter.getpostman.com/view/17755807/UzBmM7RE</p>
+
 <bloquote> *This project was create to improve my API automation tests skills. I used newman CLI to report tests results.* </bloquote>
 
 ![Newman Run Dashboard](https://i.postimg.cc/6Q58V33N/newman-run-dashboard.png)
