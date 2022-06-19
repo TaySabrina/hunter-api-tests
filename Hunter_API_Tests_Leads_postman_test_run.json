@@ -1,0 +1,246 @@
+{
+	"id": "07447164-f4b6-45be-85eb-e5aa9878d22e",
+	"name": "Hunter API Tests",
+	"timestamp": "2022-06-19T16:19:31.806Z",
+	"collection_id": "17755807-70b9f06e-a2a1-4486-9849-7ccf72f0bbb3",
+	"folder_id": 0,
+	"environment_id": "17755807-4a963eff-b3b9-47f0-9c5e-7d9eac023fdf",
+	"totalPass": 25,
+	"totalFail": 3,
+	"results": [
+		{
+			"id": "c89982b1-6c46-423b-9f41-8163f2a9f702",
+			"name": "Test Case - Create a new lead",
+			"time": 467,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Response time is less than 2seconds": true
+			},
+			"testPassFailCounts": {
+				"Response time is less than 2seconds": {
+					"pass": 4,
+					"fail": 0
+				}
+			},
+			"times": [
+				584,
+				471,
+				498,
+				467
+			],
+			"allTests": [
+				{
+					"Response time is less than 2seconds": true
+				},
+				{
+					"Response time is less than 2seconds": true
+				},
+				{
+					"Response time is less than 2seconds": true
+				},
+				{
+					"Response time is less than 2seconds": true
+				}
+			]
+		},
+		{
+			"id": "b90bf6ac-e178-420f-bc0f-1e5b9a26553a",
+			"name": "Test Case - Get a registered lead",
+			"time": 282,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2seconds": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Response time is less than 2seconds": {
+					"pass": 4,
+					"fail": 0
+				}
+			},
+			"times": [
+				281,
+				295,
+				299,
+				282
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2seconds": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 2seconds": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 2seconds": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 2seconds": true
+				}
+			]
+		},
+		{
+			"id": "8925660a-f776-492e-a6ad-62349b070f2f",
+			"name": "Test Case - Get all leads registered",
+			"time": 462,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2seconds": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Response time is less than 2seconds": {
+					"pass": 4,
+					"fail": 0
+				}
+			},
+			"times": [
+				483,
+				556,
+				560,
+				462
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2seconds": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 2seconds": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 2seconds": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 2seconds": true
+				}
+			]
+		},
+		{
+			"id": "92813fb3-9dc6-4ddb-896e-61175cfc6874",
+			"name": "Test Case - Update a registered lead",
+			"time": 610,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Status code is 204": true
+			},
+			"testPassFailCounts": {
+				"Status code is 204": {
+					"pass": 4,
+					"fail": 0
+				}
+			},
+			"times": [
+				365,
+				407,
+				390,
+				610
+			],
+			"allTests": [
+				{
+					"Status code is 204": true
+				},
+				{
+					"Status code is 204": true
+				},
+				{
+					"Status code is 204": true
+				},
+				{
+					"Status code is 204": true
+				}
+			]
+		},
+		{
+			"id": "5dbcaf8c-d4ff-44a2-b796-18aeaa9ff261",
+			"name": "Test Case - Delete a specific registered lead",
+			"time": 293,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 204": false
+			},
+			"testPassFailCounts": {
+				"Status code is 204": {
+					"pass": 1,
+					"fail": 3
+				}
+			},
+			"times": [
+				401,
+				272,
+				281,
+				293
+			],
+			"allTests": [
+				{
+					"Status code is 204": true
+				},
+				{
+					"Status code is 204": false
+				},
+				{
+					"Status code is 204": false
+				},
+				{
+					"Status code is 204": false
+				}
+			]
+		}
+	],
+	"count": 4,
+	"totalTime": 8257,
+	"collection": {
+		"requests": [
+			{
+				"id": "c89982b1-6c46-423b-9f41-8163f2a9f702",
+				"method": "POST"
+			},
+			{
+				"id": "b90bf6ac-e178-420f-bc0f-1e5b9a26553a",
+				"method": "GET"
+			},
+			{
+				"id": "8925660a-f776-492e-a6ad-62349b070f2f",
+				"method": "GET"
+			},
+			{
+				"id": "92813fb3-9dc6-4ddb-896e-61175cfc6874",
+				"method": "PUT"
+			},
+			{
+				"id": "5dbcaf8c-d4ff-44a2-b796-18aeaa9ff261",
+				"method": "DELETE"
+			}
+		]
+	}
+}

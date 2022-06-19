@@ -1,0 +1,568 @@
+{
+	"info": {
+		"_postman_id": "70b9f06e-a2a1-4486-9849-7ccf72f0bbb3",
+		"name": "Hunter API Tests",
+		"description": "Hunter provides a service to find and verify professional email addresses. The service can be accessed through an API.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17755807"
+	},
+	"item": [
+		{
+			"name": "Leads",
+			"item": [
+				{
+					"name": "Get leads",
+					"item": [
+						{
+							"name": "Test Case - Get a registered lead",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 2seconds\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/leads/{{lead_id}}?api_key={{api_key}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"leads",
+										"{{lead_id}}"
+									],
+									"query": [
+										{
+											"key": "api_key",
+											"value": "{{api_key}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Test Case - Get all leads registered",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 2seconds\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/leads?api_key={{api_key}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"leads"
+									],
+									"query": [
+										{
+											"key": "api_key",
+											"value": "{{api_key}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create lead",
+					"item": [
+						{
+							"name": "Test Case - Create a new lead",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.iterationData.get(\"email\")\r",
+											"pm.iterationData.get(\"first_name\")\r",
+											"pm.iterationData.get(\"last_name\")\r",
+											"pm.iterationData.get(\"position\")\r",
+											"pm.iterationData.get(\"company\")\r",
+											"pm.iterationData.get(\"company_industry\")\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if(pm.request.method=='Post'){\r",
+											"    pm.test(\"Successfull Post request\", function(){\r",
+											"        pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+											"    });}\r",
+											"\r",
+											"pm.test(\"Response time is less than 2seconds\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"{{email}}\",\r\n    \"first_name\": \"{{first_name}}\",\r\n    \"last_name\": \"{{last_name}}\",\r\n    \"position\": \"{{position}}\",\r\n    \"company\": \"{{company}}\",\r\n    \"company_industry\": \"{{company_industry}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/leads?api_key={{api_key}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"leads"
+									],
+									"query": [
+										{
+											"key": "api_key",
+											"value": "{{api_key}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Edit Lead",
+					"item": [
+						{
+							"name": "Test Case - Update a registered lead",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 204\", function () {\r",
+											"    pm.response.to.have.status(204);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"company\": \"{{$randomCompanyName}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/leads/{{lead_edit_id}}?api_key={{api_key}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"leads",
+										"{{lead_edit_id}}"
+									],
+									"query": [
+										{
+											"key": "api_key",
+											"value": "{{api_key}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete Lead",
+					"item": [
+						{
+							"name": "Test Case - Delete a specific registered lead",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 204\", function () {\r",
+											"    pm.response.to.have.status(204);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/leads/{{lead_delete_id}}?api_key={{api_key}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"leads",
+										"{{lead_delete_id}}"
+									],
+									"query": [
+										{
+											"key": "api_key",
+											"value": "{{api_key}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"description": "Collection contain leads.\n\nMethods: get, post, put and delete"
+		},
+		{
+			"name": "List of leads",
+			"item": [
+				{
+					"name": "Get lists of lead",
+					"item": [
+						{
+							"name": "Test Case - Get a specific registered list of leads",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 2seconds\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/leads_lists/{{lead_list_id}}?api_key={{api_key}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"leads_lists",
+										"{{lead_list_id}}"
+									],
+									"query": [
+										{
+											"key": "api_key",
+											"value": "{{api_key}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Test Case - Get all lists of registered leads",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 2seconds\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/leads_lists?api_key={{api_key}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"leads_lists"
+									],
+									"query": [
+										{
+											"key": "api_key",
+											"value": "{{api_key}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create a list of lead",
+					"item": [
+						{
+							"name": "Test Case - Create a new list of leads",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.iterationData.get(\"name\")"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if(pm.request.method == 'Post'){\r",
+											"    pm.test(\"Sucessfull Post Request\", function(){\r",
+											"        pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+											"    });}\r",
+											"\r",
+											"pm.test(\"Response time is less than 2seconds\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"{{name}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/leads_lists?api_key={{api_key}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"leads_lists"
+									],
+									"query": [
+										{
+											"key": "api_key",
+											"value": "{{api_key}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Edit a list of lead",
+					"item": [
+						{
+							"name": "Test Case - Update a specific list of leads",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 204\", function () {\r",
+											"    pm.response.to.have.status(204);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"{{$randomLoremWord}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/leads_lists/{{lead_list_edit_id}}?api_key={{api_key}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"leads_lists",
+										"{{lead_list_edit_id}}"
+									],
+									"query": [
+										{
+											"key": "api_key",
+											"value": "{{api_key}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete a list of lead",
+					"item": [
+						{
+							"name": "Test Case - Delete a specific list of leads",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 204\", function () {\r",
+											"    pm.response.to.have.status(204);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/leads_lists/{{list_delete_id}}?api_key={{api_key}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"leads_lists",
+										"{{list_delete_id}}"
+									],
+									"query": [
+										{
+											"key": "api_key",
+											"value": "{{api_key}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"description": "Collection contain lists of leads.\n\nMethods: get, post, put and delete."
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

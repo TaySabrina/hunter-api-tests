@@ -1,0 +1,290 @@
+{
+	"id": "0c12d783-e41a-47f9-bd28-8f8d9d65c702",
+	"name": "Hunter API Tests",
+	"timestamp": "2022-06-19T16:20:27.289Z",
+	"collection_id": "17755807-70b9f06e-a2a1-4486-9849-7ccf72f0bbb3",
+	"folder_id": 0,
+	"environment_id": "17755807-4a963eff-b3b9-47f0-9c5e-7d9eac023fdf",
+	"totalPass": 37,
+	"totalFail": 5,
+	"results": [
+		{
+			"id": "93159f9d-8858-47dc-9773-81e92880a6a2",
+			"name": "Test Case - Create a new list of leads",
+			"time": 315,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Response time is less than 2seconds": true
+			},
+			"testPassFailCounts": {
+				"Response time is less than 2seconds": {
+					"pass": 6,
+					"fail": 0
+				}
+			},
+			"times": [
+				342,
+				339,
+				415,
+				355,
+				308,
+				315
+			],
+			"allTests": [
+				{
+					"Response time is less than 2seconds": true
+				},
+				{
+					"Response time is less than 2seconds": true
+				},
+				{
+					"Response time is less than 2seconds": true
+				},
+				{
+					"Response time is less than 2seconds": true
+				},
+				{
+					"Response time is less than 2seconds": true
+				},
+				{
+					"Response time is less than 2seconds": true
+				}
+			]
+		},
+		{
+			"id": "e18903bb-abe7-475d-acba-18701d318627",
+			"name": "Test Case - Get a specific registered list of leads",
+			"time": 403,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2seconds": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 6,
+					"fail": 0
+				},
+				"Response time is less than 2seconds": {
+					"pass": 6,
+					"fail": 0
+				}
+			},
+			"times": [
+				452,
+				343,
+				441,
+				430,
+				408,
+				403
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2seconds": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 2seconds": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 2seconds": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 2seconds": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 2seconds": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 2seconds": true
+				}
+			]
+		},
+		{
+			"id": "737e18ac-9677-49bd-bfcb-15a2c0603cbd",
+			"name": "Test Case - Get all lists of registered leads",
+			"time": 307,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2seconds": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 6,
+					"fail": 0
+				},
+				"Response time is less than 2seconds": {
+					"pass": 6,
+					"fail": 0
+				}
+			},
+			"times": [
+				292,
+				295,
+				288,
+				305,
+				280,
+				307
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2seconds": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 2seconds": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 2seconds": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 2seconds": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 2seconds": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 2seconds": true
+				}
+			]
+		},
+		{
+			"id": "f90e6275-9b5a-467e-b182-38c4804eb7fe",
+			"name": "Test Case - Update a specific list of leads",
+			"time": 363,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Status code is 204": true
+			},
+			"testPassFailCounts": {
+				"Status code is 204": {
+					"pass": 6,
+					"fail": 0
+				}
+			},
+			"times": [
+				346,
+				308,
+				421,
+				341,
+				529,
+				363
+			],
+			"allTests": [
+				{
+					"Status code is 204": true
+				},
+				{
+					"Status code is 204": true
+				},
+				{
+					"Status code is 204": true
+				},
+				{
+					"Status code is 204": true
+				},
+				{
+					"Status code is 204": true
+				},
+				{
+					"Status code is 204": true
+				}
+			]
+		},
+		{
+			"id": "b2d70e8a-21b6-4367-a9c3-2bd557468d22",
+			"name": "Test Case - Delete a specific list of leads",
+			"time": 276,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 204": false
+			},
+			"testPassFailCounts": {
+				"Status code is 204": {
+					"pass": 1,
+					"fail": 5
+				}
+			},
+			"times": [
+				347,
+				286,
+				285,
+				281,
+				278,
+				276
+			],
+			"allTests": [
+				{
+					"Status code is 204": true
+				},
+				{
+					"Status code is 204": false
+				},
+				{
+					"Status code is 204": false
+				},
+				{
+					"Status code is 204": false
+				},
+				{
+					"Status code is 204": false
+				},
+				{
+					"Status code is 204": false
+				}
+			]
+		}
+	],
+	"count": 6,
+	"totalTime": 10379,
+	"collection": {
+		"requests": [
+			{
+				"id": "93159f9d-8858-47dc-9773-81e92880a6a2",
+				"method": "POST"
+			},
+			{
+				"id": "e18903bb-abe7-475d-acba-18701d318627",
+				"method": "GET"
+			},
+			{
+				"id": "737e18ac-9677-49bd-bfcb-15a2c0603cbd",
+				"method": "GET"
+			},
+			{
+				"id": "f90e6275-9b5a-467e-b182-38c4804eb7fe",
+				"method": "PUT"
+			},
+			{
+				"id": "b2d70e8a-21b6-4367-a9c3-2bd557468d22",
+				"method": "DELETE"
+			}
+		]
+	}
+}

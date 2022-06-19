@@ -1,0 +1,35 @@
+[
+	{
+	  "email": "paty@reddit.com",
+	  "first_name": "Paty",
+	  "last_name": "Jeckson",
+	  "position": "Employee",
+	  "company": "Reddit",
+	  "company_industry": "Internet and Telecom"
+	},
+	{
+	  "email": "cori@stripe.com",
+	  "first_name": "Cori",
+	  "last_name": "Johassen",
+	  "position": null,
+	  "company": "Stripe",
+	  "company_industry": "Payments and Business"
+
+	},
+	{
+	  "email": "beth@stripe.com",
+	  "first_name": "Beth",
+	  "last_name": "",
+	  "position": "Cofounder",
+	  "company": "Stripe",
+	  "company_industry": null
+	},
+	{
+	  "email": "amanda@reddit.com",
+	  "first_name": "Amanda",
+	  "last_name": "Green",
+	  "position": "Founder",
+	  "company": "Reddit",
+	  "company_industry": "Internet and Telecom"	
+	}
+]
